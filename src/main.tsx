@@ -2,7 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import { MotionConfig } from 'framer-motion'
 import App from './App.tsx'
-import ErrorBoundary from './components/ErrorBoundary.tsx'
+import ErrorBoundary from './components/ErrorBoundary'
 import './index.css'
 import config from './resources/config/config.ts'
 
@@ -43,10 +43,10 @@ import "@fontsource/dm-sans/700.css";
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
-    <MotionConfig reducedMotion="user">
-      <ErrorBoundary>
+    <ErrorBoundary>
+      <MotionConfig reducedMotion={config.reducedMotion}>
         <App />
-      </ErrorBoundary>
-    </MotionConfig>
-  </React.StrictMode>,
+      </MotionConfig>
+    </ErrorBoundary>
+  </React.StrictMode>
 )
